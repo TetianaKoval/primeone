@@ -1,0 +1,231 @@
+header{
+  padding: 29px 0 33px 0;
+  background-color: #fff;
+  @media(max-width: 767.99px){
+    padding: 10px 0 25px 0;
+  }
+}
+
+.header-top {
+  @include flexbox();
+  justify-content: space-between;
+  @media(max-width: 767.99px){
+    justify-content: flex-end;
+  }
+  
+}
+.header-top-lang {
+  @include flexbox();
+  margin: 0 0 20px 0;
+}
+.header-top-lang__item {
+  display: block;
+  line-height: 19px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Bebas;
+  letter-spacing: 1px;
+  padding: 0 4px;
+  margin: 0 10px 0 0;
+  &.active{
+    background-color: #000;
+    color: #fff;
+  }
+}
+.header-top__link {
+  z-index: 11;
+  font-size: 15px;
+  font-family: Akzidenz;
+  line-height: 19px;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: underline;
+  @media(max-width: 767.99px){
+    margin: 15px 0 0 0;
+  }
+  @media(max-width: 450px){
+    font-size: 12px;
+  }
+}
+.header-bottom {
+  margin: -10px 0 0 0;
+  @include flexbox();
+  align-items: center;
+  @media(max-width: 767.99px){
+    margin: -30px 0 0 0;
+  }
+  @media(max-width: 450px){
+    margin: -30px 0 0 0;
+  }
+}
+.header-bottom__column {
+  flex: 0 0 33.333%;
+}
+
+  
+.header-bottom-menu {
+
+  &-list__left  {
+    @include flexbox();
+    & li{
+      margin: 0 45px 0 0;
+      &:last-child{
+        margin: 0;
+      }
+      @media(max-width: 1000px){
+        margin: 0 25px 0 0;
+      }
+    }
+    @media(max-width: 767.99px){
+      display: block;
+      & li{
+        margin: 0 0 20px 0 !important;
+      }
+    }
+  }
+
+  &-list__right  {
+    @include flexbox();
+    justify-content: flex-end;
+
+    & li{
+      margin: 0 0 0 45px;
+      &:first-child{
+        margin: 0;
+      }
+      @media(max-width: 1000px){
+        margin: 0 0 0 25px;
+      }
+    }
+    @media(max-width: 767.99px){
+      display: block;
+      & li{
+        margin: 0 0 20px 0 !important;
+      }
+    }
+  }
+  
+}
+
+
+
+.header-bottom-menu__link {
+  @include flexbox();
+  font-family: Akzidenz;
+  color: #000;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  
+}
+.header-logo {
+  position: relative;
+  z-index: 11;
+  display: block;
+  text-align: center;
+}
+.header-logo__text {
+  color: #000;
+  font-family: Bebas;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  display: block;
+  @media(max-width: 767.99px){
+    font-size: 9px;
+    letter-spacing: 5px;
+  }
+  @media(max-width: 450px){
+    font-size: 8px;
+    letter-spacing: 4px;
+  }
+  
+}
+.header-logo__image {
+  display: inline-block;
+  margin: 8px 0 8px 0;
+  @media(max-width: 767.99px){
+    margin: 4px 0 4px 0;
+    & img{width: 180px;}
+  }
+  @media(max-width: 450px){
+    & img{width: 110px;
+      margin: 0px 0 0px 0;
+    }
+  }
+}
+
+
+
+
+//=======Burger=================//
+.header-menu__icon{
+  display: none;
+}
+
+@media(max-width: 767.99px) {
+  .header-menu__icon{
+    z-index: 8;
+    display: block;
+    position: absolute;
+    top: 18px;
+    left:18px;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    span{
+      top: 8px;
+      left:0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition-duration: 0.5s;
+      transition-timing-function: lineral;
+        &:first-child{top: 0px; }
+        &:last-child{top:auto; bottom:0px;}
+    }
+    &.active{
+      z-index: 8;
+      span{
+        transform: scale(0);
+        &:first-child{
+          top:8px;
+          transform: rotate(45deg);
+          left: 14px;
+          transition-duration: 0.5s;
+          transition-timing-function: lineral;
+        }
+        &:last-child{
+          bottom: 8px;
+          transform: rotate(-45deg);
+          left: 14px;
+          transition-duration: 0.5s;
+          transition-timing-function: lineral;
+        }
+      }
+    }
+  }
+
+  .header-menu{
+    z-index: 7;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: -120%;
+    top: 0;
+    overflow: auto;
+    background-color: #fff;
+    padding: 120px 10px 20px 10px;
+    transition-duration: 0.5s;
+  }
+  .active{
+    left: 0%;
+    transition-duration: 0.5s;
+  }
+
+
+}
+
